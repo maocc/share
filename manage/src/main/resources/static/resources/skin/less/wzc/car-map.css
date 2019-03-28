@@ -1,0 +1,77 @@
+@charset "UTF-8";
+#leftmenu {
+  vertical-align: top;
+  display: table-cell;
+  width: 250px;
+  padding: 5px;
+}
+#MapContainer {
+  vertical-align: top;
+  display: table-cell;
+}
+.dropmenu {
+  padding: 5px 5px 5px 0px;
+  margin-top: 5px;
+  border: 1px solid #d2bcbc;
+  overflow: auto;
+}
+.dropmenu ul {
+  padding-left: 10px;
+}
+.dropmenu ul.active,
+.dropmenu ul.searching {
+  border-left: 1px dotted #41b35c;
+}
+.dropmenu li {
+  width: 170px;
+}
+.dropmenu .item {
+  position: relative;
+  padding-left: 10px;
+}
+.dropmenu .dirnode:before {
+  position: absolute;
+  left: -0.4em;
+  font-family: 'FontAwesome';
+  color: #41b35c;
+  content: '\f196';
+}
+.dropmenu .dirnode.active:before,
+.dropmenu .dirnode.searching:before {
+  content: '\f147';
+}
+.dropmenu .item.car.active {
+  color: #fff;
+  background: #41b35c;
+}
+
+.dropmenu .item.station.active {
+  color: #fff;
+  background: #41b35c;
+}
+
+.dropmenu .item .name {
+  display: inline-block;
+  vertical-align: top;
+  width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dropmenu .icon-car:before {
+  font-family: 'FontAwesome';
+  content: "\f1b9";
+}
+.dropmenu .icon-store:before {
+  font-weight: bold;
+  font-size: 12px;
+  content: '[店] ';
+}
+.dropmenu .icon-district:before {
+  font-weight: bold;
+  font-size: 12px;
+  content: '[区] ';
+}
+.dropmenu .name.searching {
+  border: 1px dotted #dca046;
+}

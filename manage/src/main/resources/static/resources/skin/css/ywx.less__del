@@ -1,0 +1,965 @@
+//-----color-----
+@red: #d55553;
+@blue: #54d3fe;
+@green: #27be31;
+@yellow: #f4b400;
+@black: #454545;
+@gray: #a7a7a7;
+
+//字体颜色
+.font-orange {
+  color: orange;
+}
+
+.font-green {
+  color: green;
+}
+
+.font-blue {
+  color: deepskyblue;
+}
+
+.font-red {
+  color: @red
+}
+
+//-----reset------
+html, body {
+  font: 14px/1.5 "Microsoft Yahei", "Hiragino Sans GB", Helvetica, "Helvetica Neue", "微软雅黑", Tahoma, Arial, sans-serif;
+  color: @black;
+}
+
+body {
+  padding: 20px;
+  background-color: #E8ECEE;
+}
+
+input[type=checkbox], input[type=radio] {
+  display: inline-block;
+  margin: auto 3px;
+}
+
+table {
+  width: 100%;
+  td {
+    padding: 3px;
+    word-wrap: break-word;
+  }
+}
+
+a {
+  color: #3a8cd1;
+  text-decoration: none;
+  &:hover {
+    color: #327bb8;
+  }
+}
+
+input[type=text]::-ms-clear {
+  display: none;
+}
+
+.hidden, [hidden] {
+  display: none !important;
+}
+
+//-----uitl------
+
+.list-unstyled {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  > li {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.list-inline {
+  .list-unstyled;
+  > li {
+    display: inline-block;
+  }
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.clearfix {
+  &:before, &:after {
+    content: ' ';
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+//---按钮跟表单元素尺寸
+.form-sizer() {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 7px;
+  margin: 0 5px;
+  box-sizing: border-box;
+  // vertical-align: middle;
+}
+
+//-----button-----
+.btn-style(@color,@bg) {
+  color: @color;
+  background: @bg;
+  border: none;
+  border-radius: 2px;
+  &:hover {
+    background: darken(@bg, 3%);
+  }
+  &:active, &.active {
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.13);
+    background: darken(@bg, 3%);
+  }
+}
+
+.btn-icon(@position,@url) {
+  position: relative;
+  padding-left: 26px;
+  &:before {
+    position: absolute;
+    left: 10px;
+    top: 9px;
+    content: '';
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    background-color: transparent;
+    background-image: url(@url);
+    background-position: @position;
+    background-repeat: no-repeat;
+  }
+
+}
+
+.btn {
+  .form-sizer;
+  outline: none;
+  &[disabled] {
+    cursor: not-allowed;
+  }
+  &.del {
+    .btn-icon(-312px 0, '../new/images/icon-w.png');
+  }
+  &.add {
+    .btn-icon(-408px -96px, '../new/images/icon-w.png');
+  }
+  &.search {
+    .btn-icon(-48px 0, '../new/images/icon-w.png');
+  }
+  &.save {
+    .btn-icon(0 -144px, '../new/images/icon-w.png');
+  }
+  &.back {
+    .btn-icon(-240px -96px, '../new/images/icon-w.png');
+  }
+}
+
+.btn-sm {
+  height: 27px;
+  line-height: 27px;
+}
+
+.btn-green {
+  .btn-style(#fff, @green);
+}
+
+.btn-yellow {
+  .btn-style(#fff, @yellow);
+}
+
+.btn-gray {
+  .btn-style(@black, rgb(220, 220, 220));
+}
+
+.btn-white {
+  .btn-style(@black, #fff);
+}
+
+//-----表单-----
+.form-group {
+  margin-bottom: 5px;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+.form-control, .form-control-date, .form-control-search {
+  .form-sizer;
+  border: 1px solid #ccc;
+  width: 160px;
+  &.error {
+    border: 1px solid @red;
+  }
+}
+
+textarea.form-control {
+  line-height: inherit;
+  padding: 5px;
+}
+
+.form-control-date {
+  background: url('../img/inputIcon.png') no-repeat right -30px;
+}
+
+.form-control-search {
+  background: url('../img/inputIcon.png') no-repeat right 0;
+}
+
+.form-label:not(td) {
+  .form-sizer;
+  margin-right: 5px;
+  font-weight: bold;
+  text-align: right;
+  &.required:after {
+    content: '*';
+    color: @red;
+  }
+}
+
+td.form-label {
+  line-height: 30px;
+  font-weight: bold;
+  text-align: right;
+  //vertical-align: middle; //不需要加，td默认就是middle
+  /* &.required:after {      //不需要*号了
+     content: '*';
+     color: @red;
+   }*/
+}
+
+//-----表格-----
+.table {
+  width: 100%;
+  > tbody, > thead {
+    > tr > td, > tr > th {
+      border: 1px solid #dddddd;
+      padding: 6px;
+    }
+  }
+  > thead, > tbody {
+    > tr > th {
+      border-bottom: 3px solid #dddddd;
+      padding: 6px;
+    }
+  }
+}
+/*标题*/
+caption, .caption {
+  text-align: left;
+  text-indent: 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 5px;
+  font-size: 16px;
+  background: #f3f2f2;
+  border-bottom: 2px solid #90BE3D;
+  .btns {
+    float: right;
+  }
+  .btn {
+    text-indent: 0;
+    height: 24px;
+    line-height: 24px;
+    padding-top: 0;
+    margin-top: -2px;
+  }
+}
+
+.table-condensed {
+  > tbody, > thead {
+    > tr > td, > tr > th {
+      padding: 0;
+    }
+  }
+}
+
+//------面板-----
+.panel-search {
+  margin-bottom: 20px;
+  border: 1px solid #dee1e2;
+  border-radius: 3px;
+  background-color: #fff;
+
+  > .panel-title {
+    background: #fff;
+    padding: 0 20px;
+    height: 45px;
+    border-bottom: 1px solid #dee1e2;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    line-height: 45px;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  > .panel-body {
+    padding: 20px;
+    color: #7f8c8d;
+  }
+}
+
+.panel-blue {
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-top: none;
+  > .panel-body {
+    padding: 10px;
+    background-color: #fff;
+    border-right: 1px solid #dee1e2;
+    border-bottom: 1px solid #dee1e2;
+    border-left: 1px solid #dee1e2;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+  }
+  > .panel-title {
+    position: relative;
+    border-bottom: 1px solid #dee1e2;
+    ul {
+      .list-inline;
+    }
+    ul > li {
+      font-size: 15px;
+      margin-right: 15px;
+      margin-left: 1px;
+      padding: 10px 15px;
+      color: #333;
+      background: #f9f9f9;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+
+      border: none;
+      cursor: pointer;
+      position: relative;
+
+      .tag {
+        position: absolute;
+        font-style: normal;
+        font-size: 14px;
+        line-height: 14px;
+        padding: 2px 4px;
+        border-radius: 8px;
+        background: #d55553;
+        color: #fff;
+        top: -10px;
+        right: -5px;
+      }
+    }
+    ul > li.selected {
+      background: #fff;
+      border: 1px solid #dee1e2;
+      border-bottom: 1px solid #fff;
+      color: #333;
+      font-weight: bold;
+      margin-top: -1px;
+      margin-bottom: -1px;
+      margin-left: 0;
+
+    }
+    .btns {
+      position: absolute;
+      top: 7px;
+      right: 0;
+    }
+  }
+
+}
+
+.panel-simple {
+  .panel-title {
+    ul {
+      .list-inline;
+      > li {
+        padding: 6px 9px;
+        border: 1px solid #dee1e2;
+        border-bottom: none;
+        background: #eeeeee;
+        cursor: pointer;
+        margin-right: 5px;
+        font-weight: bold;
+      }
+      > li.selected {
+        background: #fff;
+      }
+    }
+  }
+  .panel-body {
+    border: 1px solid #dee1e2;
+    padding: 5px;
+  }
+}
+
+//table一行带节点的流程线
+.trFlow {
+  td {
+    height: 8px;
+    padding: 0;
+    background: rgb(143, 190, 61);;
+
+  }
+  td:last-child, td:first-child {
+    background: none;
+  }
+  td:nth-child(4n+1) {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border: 4px solid #fff;
+      border-radius: 12px;
+      box-sizing: border-box;
+      background: rgb(143, 190, 61);
+      right: 0;
+      top: 0;
+      margin-right: -12px;
+      margin-top: -9px;
+    }
+  }
+}
+
+/*
+翻页样式
+*/
+.pager {
+  margin-top: 10px;
+  padding: 0 15px;
+  height: 45px;
+  line-height: 45px;
+  text-align: right;
+  color: #999;
+  a {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid #999;
+    border-radius: 100%;
+    text-indent: -99999px;
+    vertical-align: middle;
+  }
+
+  a:hover {
+    background-color: #27be31;
+    border-color: #27be31;
+    text-decoration: none;
+  }
+
+  a:hover:before {
+    background-image: url(../new/images/icon-w.png);
+  }
+
+  a:before {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 14px;
+    height: 14px;
+    background-image: url(../new/images/icon-g.png);
+    background-repeat: no-repeat;
+    content: ' ';
+  }
+
+  .next:before {
+    background-position: -456px -72px;
+  }
+
+  .prev:before {
+    background-position: -432px -72px;
+  }
+
+  .first:before {
+    background-position: -192px -72px;
+  }
+
+  .last:before {
+    background-position: -384px -72px;
+  }
+
+}
+
+//-----jquery.ui-----
+.ui-dialog {
+  padding: 0;
+  background-color: #ffffff;
+  border: 1px solid #d4d8d8;
+  border-radius: 3px;
+  overflow: visible;
+  .ui-dialog-titlebar {
+    padding: 0 20px;
+    border-bottom: 1px solid #d4d8d8;
+    line-height: 45px;
+  }
+  .ui-dialog-content {
+    padding: 5px;
+  }
+  .ui-dialog-titlebar-close {
+    border: 0;
+    background: transparent url('') 0 0 no-repeat;
+  }
+  .ui-button-icon-only .ui-icon {
+    width: 14px;
+    height: 14px;
+    background: transparent url(../new/images/icon-g.png) -312px 0 no-repeat;
+  }
+  /* .ui-dialog .ui-button-text {
+     display: none;
+   }*/
+}
+
+.ui-widget-overlay {
+  background: @gray;
+  opacity: .15;
+}
+
+//jquery.ui.datepicker
+.ui-datepicker {
+  width: auto;
+  background: #ffffff;
+  border: 1px solid @gray;
+  .ui-datepicker-header {
+    background: @yellow;
+  }
+  .ui-datepicker-calendar td {
+    border: 1px solid #c8cac9;
+  }
+  .ui-datepicker-calendar a, span {
+    border: 1px solid transparent;
+    padding: 4px;
+  }
+  //选中
+  .ui-datepicker-calendar .ui-state-active {
+    background: @green;
+    color: #ffffff;
+  }
+  .ui-datepicker-calendar .ui-state-highlight {
+    border-color: @yellow;
+    color: @yellow;
+  }
+  //鼠标移上
+  .ui-datepicker-calendar .ui-state-hover {
+    border-color: @green;
+  }
+  .ui-datepicker-calendar td.ui-state-disabled {
+    // cursor: not-allowed;
+  }
+  .ui-datepicker-prev {
+    cursor: pointer;
+    text-align: center;
+    line-height: 1.8em;
+  }
+  .ui-datepicker-prev:before {
+    color: #ffffff;
+    font-family: FontAwesome;
+    content: "\f053";
+    text-decoration: none;
+    line-height: 1.8em;
+  }
+  .ui-datepicker-next {
+    cursor: pointer;
+    text-align: center;
+    line-height: 1.8em;
+  }
+  .ui-datepicker-next:before {
+    color: #ffffff;
+    font-family: FontAwesome;
+    content: "\f054";
+  }
+  .ui-datepicker .ui-datepicker-prev-hover {
+    top: 2px;
+    left: 2px;
+    text-decoration: none;
+  }
+  .ui-datepicker .ui-datepicker-next-hover {
+    top: 2px;
+    right: 2px;
+    text-decoration: none;
+  }
+
+  //农历日历
+  td {
+    position: relative;
+  }
+  td.hasfree:before {
+    font-size: 12px;
+    content: '休';
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: red;
+  }
+  td[title] .ui-state-default:after {
+    display: block;
+    font-size: 12px;
+  }
+  td[title='春节'] .ui-state-default:after {
+    content: '春节';
+  }
+  td[title='端午节'] .ui-state-default:after {
+    content: '端午节';
+  }
+  td[title='国庆节'] .ui-state-default:after {
+    content: '国庆节';
+  }
+  td[title='劳动节'] .ui-state-default:after {
+    content: '劳动节';
+  }
+  td[title='清明节'] .ui-state-default:after {
+    content: '清明节';
+  }
+  td[title='元旦'] .ui-state-default:after {
+    content: '元旦';
+  }
+  td[title='中秋节'] .ui-state-default:after {
+    content: '中秋节';
+  }
+  td[title='初一'] .ui-state-default:after {
+    content: '初一';
+  }
+  td[title='初二'] .ui-state-default:after {
+    content: '初二';
+  }
+  td[title='初三'] .ui-state-default:after {
+    content: '初三';
+  }
+  td[title='初四'] .ui-state-default:after {
+    content: '初四';
+  }
+  td[title='初五'] .ui-state-default:after {
+    content: '初五';
+  }
+  td[title='初六'] .ui-state-default:after {
+    content: '初六';
+  }
+  td[title='初七'] .ui-state-default:after {
+    content: '初七';
+  }
+  td[title='初八'] .ui-state-default:after {
+    content: '初八';
+  }
+  td[title='初九'] .ui-state-default:after {
+    content: '初九';
+  }
+  td[title='初十'] .ui-state-default:after {
+    content: '初十';
+  }
+  td[title='十一'] .ui-state-default:after {
+    content: '十一';
+  }
+  td[title='十二'] .ui-state-default:after {
+    content: '十二';
+  }
+  td[title='十三'] .ui-state-default:after {
+    content: '十三';
+  }
+  td[title='十四'] .ui-state-default:after {
+    content: '十四';
+  }
+  td[title='十五'] .ui-state-default:after {
+    content: '十五';
+  }
+  td[title='十六'] .ui-state-default:after {
+    content: '十六';
+  }
+  td[title='十七'] .ui-state-default:after {
+    content: '十七';
+  }
+  td[title='十八'] .ui-state-default:after {
+    content: '十八';
+  }
+  td[title='十九'] .ui-state-default:after {
+    content: '十九';
+  }
+  td[title='二十'] .ui-state-default:after {
+    content: '二十';
+  }
+  td[title='廿一'] .ui-state-default:after {
+    content: '廿一';
+  }
+  td[title='廿二'] .ui-state-default:after {
+    content: '廿二';
+  }
+  td[title='廿三'] .ui-state-default:after {
+    content: '廿三';
+  }
+  td[title='廿四'] .ui-state-default:after {
+    content: '廿四';
+  }
+  td[title='廿五'] .ui-state-default:after {
+    content: '廿五';
+  }
+  td[title='廿六'] .ui-state-default:after {
+    content: '廿六';
+  }
+  td[title='廿七'] .ui-state-default:after {
+    content: '廿七';
+  }
+  td[title='廿八'] .ui-state-default:after {
+    content: '廿八';
+  }
+  td[title='廿九'] .ui-state-default:after {
+    content: '廿九';
+  }
+  td[title='三十'] .ui-state-default:after {
+    content: '三十';
+  }
+}
+
+//jquery.ui.datetimepicker
+.ui-timepicker-div {
+  width: 350px;
+  dl dd {
+    margin: 0 10px 10px 50px;
+  }
+  .ui-slider {
+    margin-bottom: 20px;
+  }
+  .ui_tpicker_time_label {
+    line-height: 25px;
+  }
+  .ui_tpicker_time .ui_tpicker_time_input {
+    border: 1px solid #c8cac9;
+    height: 25px;
+    font-size: 15px;
+    color: #454545;
+  }
+}
+
+.ui-datepicker .ui-datepicker-buttonpane button {
+  margin-top: 0;
+  padding: 2px 6px;
+  background: #27be31;
+  border: none;
+  color: #fff;
+}
+
+//jquery.ui.slider
+
+.ui-slider {
+  background: #ddd;
+  .ui-slider-handle {
+    background: @green;
+    width: .5em;
+    height: 1em;
+  }
+}
+
+//jquery.ui.selectmenu
+.ui-selectmenu-button {
+  .form-control;
+  vertical-align: top;
+  &.ui-selectmenu-disabled {
+    background-color: #ebebe4;
+  }
+  span.ui-selectmenu-text {
+    line-height: 30px;
+    padding: 0;
+  }
+  span.ui-icon {
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    margin-top: -7px;
+    background: url('../new/images/icon-g.png') -313px -119px no-repeat;
+  }
+}
+
+.ui-selectmenu-menu {
+  background: #ffffff;
+  border: 1px solid #8c8c8b;
+  max-height: 250px;
+  max-width: 400px;
+  overflow: auto;
+  .ui-state-focus {
+    background: #c8cac9;
+  }
+  .ui-menu-item {
+    text-indent: 1em;
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+}
+
+//-----webuploader----
+/*
+文件上传按钮
+样例：
+<div class="btn btn-green upload-btn">
+    <i class="fa fa-cloud-upload"></i>上传
+</div>
+*/
+.upload-btn.webuploader-container {
+  padding: 0;
+  position: relative;
+}
+
+.upload-btn .webuploader-pick {
+  cursor: pointer;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 7px;
+}
+
+.webuploader-element-invisible {
+  position: absolute !important;
+  opacity: 0;
+}
+
+.upload-list {
+  .fa-close, .close {
+    color: lighten(@red, 10%);
+    border: 1px solid lighten(@red, 10%);
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    text-align: center;
+    cursor: pointer;
+    &:hover {
+      color: @red;
+      border: 1px solid @red;
+    }
+  }
+  > li {
+    position: relative;
+    height: 70px;
+    line-height: 70px;
+    width: 80px;
+    border: 1px solid #ccc;
+    margin: 3px;
+    text-align: center;
+  }
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+  }
+}
+
+/*图片上传按钮*/
+/*
+<div class="pic-upload small"
+     style='background-image:url()'>
+   <i class="fa fa-cloud-upload"></i>
+</div>
+*/
+.pic-upload {
+
+  display: block;
+  width: 200px;
+  height: 150px;
+  border: 4px solid #ddd;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  &.small {
+    width: 150px;
+    height: 100px;
+    i {
+      height: 100px;
+      line-height: 100px;
+    }
+  }
+  i {
+    display: block;
+    text-align: center;
+    height: 150px;
+    line-height: 150px;
+    opacity: .5;
+    font-size: 30px;
+    color: #27be31;
+  }
+}
+
+/*
+  惊叹号提示
+  格式：<div class="ywx-tooltip">
+          <div class="box">内容</div>
+       </div>
+*/
+
+.ywx-tooltip {
+  display: inline-block;
+  position: relative;
+  padding-right: 10px;
+  &:after {
+    content: '\f05a';
+    font-family: 'FontAwesome';
+    color: @blue;
+    font-size: 1.1em;
+  }
+  .box {
+    &:before {
+      content: '';
+      position: absolute;
+      border-left: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      transform: rotate(45deg);
+      background: #fff;
+      top: 17px;
+      left: -5px;
+      width: 6px;
+      height: 6px;
+    }
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -10px;
+    margin-left: -1px;
+    border: 1px solid #ddd;
+    padding: 8px 10px;
+    border-radius: 4px;
+    background: #fff;
+    max-width: 330px;
+    min-width: 220px;
+  }
+  &:hover .box {
+    display: block;
+  }
+}
+
+/*
+  :checkbox|:radio  选择卡
+  格式：
+        <label class='btn-check'>
+            <input type="checkbox" name="transferTypes" value="5">
+            <span>名称</span>
+        </label>
+*/
+.btn-check {
+  display: inline-block;
+  input {
+    display: none !important;
+  }
+  :checked ~ span {
+    color: #fff;
+    background: #24b12e;
+  }
+  input ~ span {
+    padding: 1px 4px;
+    border-radius: 3px;
+    margin-right: 3px;
+    margin-top: 3px;
+    display: inline-block;
+    cursor: pointer;
+  }
+}

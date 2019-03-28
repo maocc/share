@@ -1,0 +1,399 @@
+@charset "UTF-8";
+
+body {
+	padding: 20px ;
+	background-color: #E8ECEE;
+}
+
+/*
+  查询面板
+*/
+.yc-panel-search {
+	margin-bottom: 20px;
+    border: 1px solid #dee1e2;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.yc-panel-search:before {
+    display: block;
+    content: '查询信息';
+    background: #fff;
+    padding: 0 20px;
+    height: 45px;
+    border-bottom: 1px solid #dee1e2;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    line-height: 45px;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.yc-panel-search > .body {
+    padding: 20px;
+    color: #7f8c8d;
+}
+
+/*
+  面板
+*/
+.yc-panel {
+	margin-top: 0;
+	margin-bottom: 20px;
+    border-top: none;
+}
+
+.yc-panel > .title {
+    position: relative;
+    border-bottom: 1px solid #dee1e2;
+}
+
+.yc-panel > .title ul {
+    list-style: none;
+    margin-bottom: 0;
+    padding-left: 0;
+    padding-bottom: 0;
+    height:45px;
+}
+
+.yc-panel > .title ul li {
+    display: inline-block;
+    font-size: 15px;
+    margin: 0 10px 0 0;
+    padding: 0 25px;
+    height: 45px;
+    line-height: 45px;
+    background-color: #f9f9f9;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color: #333;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+.yc-panel > .title ul li.active {
+    background: #fff;
+    border-top: 1px solid #dee1e2;
+    border-right: 1px solid #dee1e2;
+    border-left: 1px solid #dee1e2;
+    height: 46px;
+    margin-bottom: -1px;
+    color: #333;
+    font-weight: bold;
+}
+
+.yc-panel > .title .btns {
+    position: absolute;
+    top: 7px;
+    right: 0;
+}
+
+.yc-panel > .body {
+    padding: 10px;
+    background-color: #fff;
+	border-right: 1px solid #dee1e2;
+	border-bottom: 1px solid #dee1e2;
+	border-left: 1px solid #dee1e2;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+.yc-panel > .body > table > thead th {
+	border-bottom: 3px solid #ddd;
+}
+
+
+
+
+/*
+  按钮样式
+*/
+.yc-btn,.btn.btn-green {
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 30px;
+    background: #27be31;
+    border: none;
+   
+    color: #ffffff;
+    border-radius: 2px;
+    /*和输入框在一行时 向下偏了一个像素 所以用top*/
+    vertical-align: top;
+}
+
+.yc-btn:hover,.btn.btn-green:hover {
+	background-color: #339933;
+}
+.yc-btn.add {
+    position: relative;
+    padding-left: 26px;
+}
+
+.yc-btn.add:before {
+    position: absolute;
+    left: 10px;
+    top: 9px;
+    content:'';
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    background-color: transparent;
+    background-image: url('../images/icon-w.png');
+    background-position: -408px -96px;
+    background-repeat: no-repeat;
+}
+
+.yc-btn.del {
+    position: relative;
+    padding-left: 26px;
+}
+
+.yc-btn.del:before {
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    content:'';
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    background-color: transparent;
+    background-image: url('../images/icon-w.png');
+    background-position: -312px 0;
+    background-repeat: no-repeat;
+}
+
+.yc-btn.search {
+    position: relative;
+    padding-left: 26px;
+}
+
+.yc-btn.search:before {
+    content:'';
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    background-color: transparent;
+    background-image: url('../images/icon-w.png');
+    background-position: -48px 0;
+    background-repeat: no-repeat;
+}
+
+.yc-btn.back {
+    position: relative;
+    padding-left: 26px;
+}
+
+.yc-btn.back:before {
+    content:'';
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    background-color: transparent;
+    background-image: url('../images/icon-w.png');
+    background-position: -240px -96px;
+    background-repeat: no-repeat;
+}
+
+.yc-btn.save {
+    position: relative;
+    padding-left: 26px;
+}
+
+.yc-btn.save:before {
+    content:'';
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    background-color: transparent;
+    background-image: url('../images/icon-w.png');
+    background-position: 0 -144px;
+    background-repeat: no-repeat;
+}
+
+.yc-btn.create {
+    position: relative;
+    padding-left: 26px;
+}
+
+.yc-btn.create:before {
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    content:'';
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    background-color: transparent;
+    background-image: url('../images/icon-w.png');
+    background-position: -408px -96px;
+    background-repeat: no-repeat;
+}
+
+.yc-btn.export {
+    position: relative;
+    padding-left: 27px;
+}
+
+.yc-btn.export:before {
+    position: absolute;
+    content: '';
+    background-image: url('../../img/icons2.png');
+    background-repeat: no-repeat;
+    width: 21px;
+    height: 21px;
+    display: block;
+    background-position: -86px -264px;
+    left: 3px;
+    top: 3px;
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.yc-btn.note {
+    position: relative;
+    padding-left: 27px;
+}
+
+.yc-btn.note:before {
+    position: absolute;
+    content: '';
+    background-image: url('../../img/icons2.png');
+    background-repeat: no-repeat;
+    width: 22px;
+    height: 23px;
+    display: block;
+    background-position: -86px -221px;
+    left: 3px;
+    top: 3px;
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -moz-transform: scale(0.9);
+    transform: scale(0.9);
+}
+
+.yc-btn.yellow {
+    background: #fdcb02;
+}
+.yc-btn.yellow:hover {
+    background-color: #e9bb02;
+}
+
+
+/*
+  翻页样式
+*/
+.yc-pager {
+	margin-top: 10px;
+    padding: 0 15px;
+    height: 45px;
+    line-height: 45px;
+    text-align: right;
+    color: #999;
+}
+
+.yc-pager a {
+	position: relative;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	background-color: #fff;
+	border: 1px solid #999;
+	border-radius: 100%;
+	text-indent: -99999px;
+	vertical-align: middle;
+}
+
+.yc-pager a:hover {
+	background-color: #27be31;
+	border-color: #27be31;
+	text-decoration: none;
+}
+
+.yc-pager a:hover:before {
+	background-image: url(../images/icon-w.png);
+}
+
+.yc-pager a:before {
+	position: absolute;
+	top: 7px;
+	left: 7px;
+	width: 14px;
+	height: 14px;
+	background-image: url(../images/icon-g.png);
+	background-repeat: no-repeat;
+	content: ' ';
+}
+
+
+.yc-pager .next:before {
+	background-position: -456px -72px;
+}
+
+.yc-pager .prev:before {
+    background-position: -432px -72px;
+}
+
+.yc-pager .first:before {
+    background-position: -192px -72px;
+}
+
+.yc-pager .last:before {
+    background-position: -384px -72px;
+}
+
+/*
+  Jquery UI 样式
+*/
+
+.ui-dialog {
+	padding: 0;
+    background-color: #ffffff;
+    border: 1px solid #d4d8d8;
+    border-radius: 3px;
+    box-shadow: none;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    padding: 0 20px;
+    border-bottom: 1px solid #d4d8d8;
+    line-height: 45px;
+}
+
+.ui-dialog .ui-dialog-content {
+    padding:5px;
+}
+
+.ui-dialog .ui-dialog-titlebar-close {
+	top: 45%;
+    border:0;
+	background: transparent url('') 0 0 no-repeat;
+}
+
+.ui-dialog .ui-button-icon-only .ui-icon {
+	width: 14px;
+	height: 14px;
+
+	background: transparent url(../images/icon-g.png) -312px 0 no-repeat;
+}
+
+.ui-dialog  .ui-button-text {
+	display: none;
+}
+
+
+
+
+

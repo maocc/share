@@ -1,0 +1,174 @@
+body{
+	padding:20px;
+	background-color: #E8ECEE;
+}
+
+legend,.legend {
+	padding:3px;
+	text-indent:5px;
+    margin-bottom: 8px;
+    font-size: 16px;
+    border-width: 2px ;
+    background: #f3f2f2;
+    border-bottom: 1px solid  #90BE3D;
+}
+/*
+翻页样式
+*/
+.yc-pager {
+    margin-top: 10px;
+    padding: 0 15px;
+    height: 45px;
+    line-height: 45px;
+    text-align: right;
+    color: #999;
+}
+
+.yc-pager a {
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid #999;
+    border-radius: 100%;
+    text-indent: -99999px;
+    vertical-align: middle;
+}
+
+.yc-pager a:hover {
+    background-color: #27be31;
+    border-color: #27be31;
+    text-decoration: none;
+}
+
+.yc-pager a:hover:before {
+    background-image: url(../new/images/icon-w.png);
+}
+
+.yc-pager a:before {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    width: 14px;
+    height: 14px;
+    background-image: url(../new/images/icon-g.png);
+    background-repeat: no-repeat;
+    content: ' ';
+}
+.yc-pager .next:before {
+    background-position: -456px -72px;
+}
+
+.yc-pager .prev:before {
+    background-position: -432px -72px;
+}
+
+.yc-pager .first:before {
+    background-position: -192px -72px;
+}
+
+.yc-pager .last:before {
+    background-position: -384px -72px;
+}
+
+.yc-panel-search {
+    margin-bottom: 20px;
+    border: 1px solid #dee1e2;
+    border-radius: 3px;
+    background-color: #fff;
+}
+
+.yc-panel-search:before {
+    display: block;
+    content: '查询信息';
+    background: #fff;
+    padding: 0 20px;
+    height: 45px;
+    border-bottom: 1px solid #dee1e2;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    line-height: 45px;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.yc-panel-search > form,
+.yc-panel-search > section {
+    padding: 20px;
+    color: #7f8c8d;
+}
+
+
+/*
+  面板
+*/
+.yc-panel {
+	margin-top: 0;
+	margin-bottom: 20px;
+    border-top: none;
+}
+
+.yc-panel > .title {
+    position: relative;
+}
+
+.yc-panel > .title ul {
+    list-style: none;
+    padding-left: 0;
+    padding-bottom: 0;
+    margin-bottom:0;
+    height:45px;
+}
+
+.yc-panel > .title ul li {
+    display: inline-block;
+    font-size: 15px;
+    margin: 0 10px 0 0;
+    padding: 0 25px;
+    height: 44px;
+    line-height: 44px;
+    background-color: #f9f9f9;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color: #333;
+    cursor: pointer;
+
+}
+
+.yc-panel > .title ul li.active {
+    background: #fff;
+    border-top: 1px solid #dee1e2;
+    border-right: 1px solid #dee1e2;
+    border-left: 1px solid #dee1e2;
+    color: #333;
+    height: 46px;
+    margin-bottom: -1px;
+    font-weight: bold;
+}
+
+.yc-panel > .title .btns {
+    position: absolute;
+    top: 7px;
+    right: 0;
+}
+
+.yc-panel > .body {
+    padding: 10px;
+    background-color: #fff;
+	border-right: 1px solid #dee1e2;
+	border-bottom: 1px solid #dee1e2;
+	border-left: 1px solid #dee1e2;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+}
+
+.yc-panel > .body > table > thead th {
+	border-bottom: 3px solid #ddd;
+}
+
+
+
+

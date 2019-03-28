@@ -1,0 +1,77 @@
+/*
+.yueche-panel > .body > form > div {
+    border: 1px solid #ddd;
+    margin-top: -1px;
+}
+
+.yueche-panel > .body .title1 {
+    margin-top: 10px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.yueche-panel > .body .title1:first-child {
+    margin-top: 0;
+}
+
+.yueche-panel > .body .title1 .yueche-up,
+.yueche-panel > .body .title1 .yueche-down {
+    float: right;
+    margin-top: 3px;
+   !* margin-right: 15px; *!
+    !*background: #95a5a6;*!
+    background: none;
+    position: relative;
+}
+
+.yueche-panel > .body .title1 .yueche-up:before,
+.yueche-panel > .body .title1 .yueche-down:before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    margin-left: -7px;
+    margin-top: -7px;
+    top: 50%;
+    left: 50%;
+    background: url('../new/images/icon-g.png') -313px -119px no-repeat;
+}
+
+.yueche-panel > .body .title1 h4 {
+    margin: 0;
+    !*border-left: 4px solid #fdcb02;*!
+    float: left;
+    height: 35px;
+    line-height: 35px;
+    text-indent: .5em;
+}
+
+.yueche-panel > .body .title1 h4 .yueche-checkbox {
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.yueche-panel > .body .title2 {
+    height: 30px;
+    line-height: 30px;
+    padding-left: 2.5em;
+}
+
+.yueche-panel > .body .title2 .yueche-checkbox {
+    float: left;
+    margin-top: 8px;
+    margin-right: .5em;
+}
+
+.yueche-panel > .body .content {
+    padding-left: 4.5em;
+    !*border-bottom: 1px solid #ddd;*!
+    margin-bottom: -1px;
+}
+
+.yueche-panel > .body .content label {
+    font-weight: normal;
+    cursor: pointer;
+}
+*/

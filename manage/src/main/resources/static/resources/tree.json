@@ -1,0 +1,154 @@
+{
+  "menu": [
+    {
+      "id": "1",
+      "menu": [
+        {
+          "id": "11",
+          "text": "收支明细",
+          "items": [],
+          "href": "cAccountDeal/list.html",
+          "cssStyle": "fa fa-circle-o"
+        },
+        {
+          "id": "12",
+          "text": "订单管理",
+          "items": [],
+          "href": "order.html",
+          "cssStyle": "fa fa-circle-o"
+        },
+        {
+          "id": "13",
+          "text": "退款审批",
+          "items": [],
+          "href": "redressAudit.html",
+          "cssStyle": "fa fa-circle-o"
+        },
+        {
+          "id": "14",
+          "text": "收入统计",
+          "items": [],
+          "href": "order/stat.html",
+          "cssStyle": "fa fa-circle-o"
+        }
+      ],
+      "title": "收入管理",
+      "cssStyle": "fa  fa-money"
+    },
+    {
+      "id": "2",
+      "menu": [
+        {
+          "id": "21",
+          "text": "车辆管理",
+          "items": [],
+          "href": "car/list.html",
+          "cssStyle": "fa fa-circle-o"
+        },
+        {
+          "id": "22",
+          "text": "计费规则设置",
+          "items": [],
+          "href": "manage/stationBillingRule.html",
+          "cssStyle": "fa fa-circle-o"
+        },
+        {
+          "id": "23",
+          "text": "行驶轨迹",
+          "items": [],
+          "href": "car/track.html",
+          "cssStyle": "fa fa-circle-o"
+        },
+        {
+          "id": "24",
+          "text": "车辆操作日志",
+          "items": [],
+          "href": "car/journal.html",
+          "cssStyle": "fa fa-circle-o"
+        }
+      ],
+      "title": "车辆管理",
+      "cssStyle": "fa fa-car"
+    },
+    {
+      "id": "3",
+      "menu": [
+        {
+          "id": "31",
+          "text": "报警管理",
+          "items": [],
+          "href": "deviceAlert/list.html",
+          "cssStyle": "fa fa-circle-o"
+        },
+        {
+          "id": "32",
+          "text": "电子围栏报警",
+          "items": [],
+          "href": "rtAlert/list.html",
+          "cssStyle": "fa fa-circle-o"
+        },
+        {
+          "id": "33",
+          "text": "运维工单管理",
+          "items": [],
+          "href": "maintOrder.html",
+          "cssStyle": "fa fa-circle-o"
+        }
+      ],
+      "title": "运营管理",
+      "cssStyle": "fa fa-opera"
+    },
+    {
+      "id": "32",
+      "menu": [
+      ],
+      "title": "用户管理",
+      "href": "user/list.html",
+      "cssStyle": "fa fa-user"
+    },
+    {
+      "id": "4",
+      "menu": [
+        {
+          "id": "41",
+          "text": "景区设置",
+          "items": [],
+          "href": "manage/station.html",
+          "cssStyle": "fa fa-circle-o"
+        },
+        {
+          "id": "42",
+          "text": "后台用户管理",
+          "items": [],
+          "href": "manage/user.html",
+          "cssStyle": "fa fa-circle-o"
+        },
+        {
+          "id": "43",
+          "text": "电子围栏",
+          "items": [],
+          "href": "manage/enclosure.html",
+          "cssStyle": "fa fa-circle-o"
+        }
+      ],
+      "title": "景区管理",
+      "cssStyle": "fa fa-street-view"
+    },
+    {
+      "id": "5",
+      "menu": [
+      ],
+      "title": "取消订单原因",
+      "href": "manage/other/reason.html",
+      "cssStyle": "fa fa-question"
+    },
+    {
+      "id": "6",
+      "menu": [
+      ],
+      "title": "意见反馈",
+      "href": "manage/other/feedback.html",
+      "cssStyle": "fa fa-feed"
+    }
+  ]
+}
